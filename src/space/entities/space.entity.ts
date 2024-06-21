@@ -14,8 +14,8 @@ export class Space {
     column: number;
 
     @ManyToOne(() => Room, room => room.spaces)
-    @JoinColumn({ name: 'id_sala' })
-    sala: Room;
+    @JoinColumn({ name: 'id_room' })
+    room: Room;
 
     @OneToMany(() => Booking, booking => booking.space)
     bookings: Booking[];

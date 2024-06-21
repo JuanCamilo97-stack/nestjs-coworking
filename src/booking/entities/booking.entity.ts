@@ -1,16 +1,16 @@
-import { Espacio } from "src/espacios/entities/espacio.entity";
 import { Meeting } from "src/meeting/entities/meeting.entity";
 import { User } from "src/users/entities/users.entity";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Space } from 'src/space/entities/space.entity';
 
 @Entity({ schema: 'coworking', name: "booking" })
 export class Booking {
     @PrimaryGeneratedColumn()
     id_booking: number;
 
-    @ManyToOne(() => Espacio, espacio => espacio.booking)
+    @ManyToOne(() => Space, space => space.booking)
     @JoinColumn({ name: 'id_espacio' })
-    espacio: Espacio;
+    espacio: Space;
 
     @ManyToOne(() => User, user => user.bookings)
     @JoinColumn({ name: 'id_user' })

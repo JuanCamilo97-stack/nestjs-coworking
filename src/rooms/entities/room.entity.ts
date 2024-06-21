@@ -1,4 +1,3 @@
-
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Space } from './../../space/entities/space.entity';
 
@@ -11,5 +10,5 @@ export class Room {
     name: string;
 
     @OneToMany(() => Space, space => space.room)
-    espacios: Space[]
+    spaces: Space[];
 }
