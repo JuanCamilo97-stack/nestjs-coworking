@@ -5,10 +5,13 @@ import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MeetingModule } from './meeting/meeting.module';
+import { SpacesModule } from './space/space.module';
+
+
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
+  ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env'
     }),
@@ -28,7 +31,8 @@ import { MeetingModule } from './meeting/meeting.module';
     UsersModule,  
     BookingModule, 
     MeetingModule,
-    RoomsModule 
+    RoomsModule,
+    SpacesModule
   ],
 })
 export class AppModule {}
