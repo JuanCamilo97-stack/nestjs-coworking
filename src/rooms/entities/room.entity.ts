@@ -1,5 +1,6 @@
-import { Espacio } from "src/espacios/entities/espacio.entity";
+
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Space } from './../../space/entities/space.entity';
 
 @Entity({ schema: 'coworking', name: "rooms" })
 export class Room {
@@ -9,6 +10,6 @@ export class Room {
     @Column()
     name: string;
 
-    @OneToMany(() => Espacio, espacio => espacio.room)
-    espacios: Espacio[]
+    @OneToMany(() => Space, space => space.room)
+    espacios: Space[]
 }
